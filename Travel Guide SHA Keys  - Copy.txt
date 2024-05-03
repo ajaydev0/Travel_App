@@ -1,0 +1,197 @@
+Starting Gradle Daemon...
+Gradle Daemon started in 13 s 552 ms
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy UP-TO-DATE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+
+> Task :app:signingReport
+Variant: debug
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+Variant: release
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+Variant: profile
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+
+> Task :connectivity_plus:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+
+> Task :firebase_auth:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+
+> Task :firebase_core:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+
+> Task :google_sign_in_android:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+
+BUILD SUCCESSFUL in 56s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2:14:57 PM: Executing 'signingReport'...
+
+Executing tasks: [signingReport] in project C:\Users\Ajay\Documents\greatbro_it\android
+
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy UP-TO-DATE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+
+> Task :app:signingReport
+Variant: debug
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+Variant: release
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+Variant: profile
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+
+> Task :firebase_auth:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+
+> Task :firebase_core:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\Ajay\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 72:99:9F:61:B8:4D:8D:C1:AD:8C:56:0C:22:B8:0E:7D
+SHA1: C5:7A:D2:F2:18:BE:64:17:92:6F:72:2E:5B:90:CF:A4:5E:8A:9A:8A
+SHA-256: 4C:3B:D2:B6:A7:A4:1A:78:94:6B:29:CE:2D:5F:AC:84:19:97:A7:1D:5B:34:6D:E2:FB:A8:AC:B6:BB:8C:0D:F0
+Valid until: Wednesday, February 11, 2054
+----------
+
+BUILD SUCCESSFUL in 2s
+7 actionable tasks: 3 executed, 4 up-to-date
+
+Build Analyzer results available
+2:14:59 PM: Execution finished 'signingReport'.

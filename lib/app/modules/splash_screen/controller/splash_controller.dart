@@ -10,7 +10,7 @@ class SplashController extends GetxController {
 
   nextPage() async {
     await Future.delayed(
-      const Duration(seconds: 3),
+      const Duration(milliseconds: 2500),
       () {
         return Get.offAllNamed(Routes.WelcomePage);
       },

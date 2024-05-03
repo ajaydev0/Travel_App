@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class appcolors {
-  static Color mainColor = Colors.amber;
+class Kcolor {
+  static Color? mainColor = Colors.blue[400];
+  static Color white = Colors.white;
+  static Color black = Colors.black;
   // static dynamic blue300 = Colors.blue[300];
   // static dynamic blue400 = Colors.blue[400];
   // static const Color black = Colors.black;
