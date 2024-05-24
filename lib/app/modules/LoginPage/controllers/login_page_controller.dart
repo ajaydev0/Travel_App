@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import '../../../const/get_Storage..dart';
 import '../../../router/app_pages.dart';
 
 class LoginPageController extends GetxController {
@@ -67,12 +68,14 @@ class LoginPageController extends GetxController {
       if (conectivityResult == ConnectivityResult.mobile ||
           conectivityResult == ConnectivityResult.wifi) {
         try {
+
           isLoading.value = true;
           UserCredential userCredential = await FirebaseAuth.instance
               .signInWithEmailAndPassword(
                   email: email.text, password: pass.text);
           if (userCredential.user != null) {
-              Get.offAllNamed(Routes.nav_Bar);
+            Get.offAllNamed(Routes.nav_Bar);
+             box.value.write("User", "User Ace");
           }
           isLoading.value = false;
         } on FirebaseAuthException catch (e) {
@@ -98,6 +101,7 @@ class LoginPageController extends GetxController {
     if (conectivityResult == ConnectivityResult.mobile ||
         conectivityResult == ConnectivityResult.wifi) {
       try {
+       
         isLoading.value = true;
         // Create Instance
         FirebaseAuth auth = FirebaseAuth.instance;
@@ -113,7 +117,11 @@ class LoginPageController extends GetxController {
         // signin user with credentials
         final UserCredential userCredential =
             await auth.signInWithCredential(credential);
+
         Get.offAllNamed(Routes.nav_Bar);
+         box.value.write("User", "User Ace");
+
+
         isLoading.value = false;
       } on FirebaseAuthException catch (e) {
         if (kDebugMode) {
@@ -131,17 +139,13 @@ class LoginPageController extends GetxController {
     }
   }
 
+  facebookSignIn() {
+    Get.snackbar("Working", "Coming Soon...",
+        backgroundColor: Colors.black.withOpacity(.1));
+  }
 
-
-facebookSignIn(){
-  Get.snackbar("Working", "Coming Soon...",
-          backgroundColor: Colors.black.withOpacity(.1));
-
-}
-githubSignIn(){
-  Get.snackbar("Working", "Coming Soon...",
-          backgroundColor: Colors.black.withOpacity(.1));
-
-}
-
+  githubSignIn() {
+    Get.snackbar("Working", "Coming Soon...",
+        backgroundColor: Colors.black.withOpacity(.1));
+  }
 }

@@ -11,6 +11,8 @@ class SignupPageView extends GetView<SignupPageController> {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(SignupPageController());
+    var kHeight = MediaQuery.of(context).size.height / 100;
+    var kWidth = MediaQuery.of(context).size.width / 100;
     return Obx(
       () => Stack(
         children: [
@@ -26,8 +28,9 @@ class SignupPageView extends GetView<SignupPageController> {
             body: SingleChildScrollView(
               child: Container(
                 color: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding: EdgeInsets.symmetric(
+                    horizontal: kWidth * 5.5,
+                    vertical: kHeight * 3.2),
                 child: Form(
                   key: controller.formKey,
                   child: Column(
@@ -38,31 +41,24 @@ class SignupPageView extends GetView<SignupPageController> {
                         children: [
                           Ktext(
                             text: "Create Your Account",
-                            fontSize: 30,
+                            fontSize: kWidth * 8.4,
                             fontWeight: FontWeight.bold,
                           ),
                         ],
-                      ),
-                      const SizedBox(
-                        height: 0,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Ktext(
                             text: "please create your account, to join us.",
-                            fontSize: 13,
+                            fontSize: kWidth * 3.7,
                             color: Colors.grey.shade600,
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 50,
-                      ),
+                      SizedBox(height: kHeight * 5),
                       Ktext(text: "Name", fontWeight: FontWeight.bold),
-                      const SizedBox(
-                        height: 5,
-                      ),
+                      SizedBox(height: kHeight * 0.7),
                       TextFormField(
                         validator: (value) {
                           return controller.validateName(value);
@@ -78,10 +74,10 @@ class SignupPageView extends GetView<SignupPageController> {
                             color: Colors.grey,
                           ),
                           hintText: "Enter your name...",
-                          hintStyle: const TextStyle(
+                          hintStyle: TextStyle(
                               color: Colors.grey,
                               fontFamily: "Aleo",
-                              fontSize: 14),
+                              fontSize: kWidth * 3.9),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(
@@ -95,20 +91,14 @@ class SignupPageView extends GetView<SignupPageController> {
                               borderRadius: BorderRadius.circular(10),
                               borderSide:
                                   BorderSide(color: Kcolor.black, width: 1.5)),
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 20),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: kWidth * 5.5,
+                              vertical: kHeight * 2.7),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Ktext(
-                        text: "E-mail",
-                        fontWeight: FontWeight.bold,
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
+                      SizedBox(height: kHeight * 1.3),
+                      Ktext(text: "E-mail", fontWeight: FontWeight.bold),
+                      SizedBox(height: kHeight * 0.7),
                       TextFormField(
                         validator: (value) {
                           return controller.validateEmail(value);
@@ -124,10 +114,10 @@ class SignupPageView extends GetView<SignupPageController> {
                             color: Colors.grey,
                           ),
                           hintText: "Enter your email...",
-                          hintStyle: const TextStyle(
+                          hintStyle: TextStyle(
                               color: Colors.grey,
                               fontFamily: "Aleo",
-                              fontSize: 14),
+                              fontSize: kWidth * 3.9),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(
@@ -141,20 +131,17 @@ class SignupPageView extends GetView<SignupPageController> {
                               borderRadius: BorderRadius.circular(10),
                               borderSide:
                                   BorderSide(color: Kcolor.black, width: 1.5)),
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 20),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: kWidth * 5.5,
+                              vertical: kHeight * 2.7),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      SizedBox(height: kHeight * 1.3),
                       Ktext(
                         text: "Password",
                         fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(
-                        height: 5,
-                      ),
+                      SizedBox(height: kHeight * 0.7),
                       TextFormField(
                         validator: (value) {
                           return controller.validatePass(value);
@@ -169,16 +156,16 @@ class SignupPageView extends GetView<SignupPageController> {
                         obscureText: !controller.isVisible.value,
                         decoration: InputDecoration(
                           hintText: "Enter your password...",
-                          hintStyle: const TextStyle(
+                          hintStyle: TextStyle(
                               color: Colors.grey,
                               fontFamily: "Aleo",
-                              fontSize: 14),
+                              fontSize: kWidth * 3.9),
                           prefixIcon: const Icon(
                             Icons.lock_open_outlined,
                             color: Colors.grey,
                           ),
                           suffixIcon: Padding(
-                            padding: const EdgeInsets.only(right: 5),
+                            padding: EdgeInsets.only(right: kWidth * 1.5),
                             child: IconButton(
                               onPressed: () {
                                 controller.isVisible.value =
@@ -208,17 +195,18 @@ class SignupPageView extends GetView<SignupPageController> {
                               borderRadius: BorderRadius.circular(10),
                               borderSide:
                                   BorderSide(color: Kcolor.black, width: 1.5)),
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 20),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: kWidth * 5.5,
+                              vertical: kHeight * 2.7),
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      SizedBox(height: kHeight * 1.3),
                       Row(
                         children: [
                           AnimatedContainer(
                             duration: const Duration(milliseconds: 300),
-                            width: 15,
-                            height: 15,
+                            height: kHeight * 2.0,
+                            width: kWidth * 4.3,
                             decoration: BoxDecoration(
                                 color:
                                     controller.isPasswordEightCharacters.value
@@ -229,32 +217,32 @@ class SignupPageView extends GetView<SignupPageController> {
                                     ? Border.all(color: Colors.transparent)
                                     : Border.all(color: Colors.grey.shade400),
                                 borderRadius: BorderRadius.circular(50)),
-                            child: const Center(
+                            child: Center(
                               child: Icon(
                                 Icons.check,
                                 color: Colors.white,
-                                size: 12,
+                                size: kWidth * 3.4,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            width: 6,
+                          SizedBox(
+                            width: kWidth * 1.8,
                           ),
                           Ktext(
                             text: "Contains at least 8 characters",
-                            fontSize: 12,
+                            fontSize: kWidth * 3.5,
                           )
                         ],
                       ),
-                      const SizedBox(
-                        height: 8,
+                      SizedBox(
+                        height: kHeight * 0.8,
                       ),
                       Row(
                         children: [
                           AnimatedContainer(
                             duration: const Duration(milliseconds: 500),
-                            width: 15,
-                            height: 15,
+                            height: kHeight * 2.0,
+                            width: kWidth * 4.3,
                             decoration: BoxDecoration(
                                 color: controller.hasPasswordOneNumber.value
                                     ? Colors.green
@@ -263,28 +251,28 @@ class SignupPageView extends GetView<SignupPageController> {
                                     ? Border.all(color: Colors.transparent)
                                     : Border.all(color: Colors.grey.shade400),
                                 borderRadius: BorderRadius.circular(50)),
-                            child: const Center(
+                            child: Center(
                               child: Icon(
                                 Icons.check,
                                 color: Colors.white,
-                                size: 12,
+                                size: kWidth * 3.4,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            width: 5,
+                          SizedBox(
+                            width: kWidth * 1.8,
                           ),
                           Ktext(
                             text: "Contains at least 1 number",
-                            fontSize: 12,
+                            fontSize: kWidth * 3.5,
                           )
                         ],
                       ),
-                      const SizedBox(
-                        height: 50,
+                      SizedBox(
+                        height: kHeight * 7,
                       ),
                       MaterialButton(
-                        height: 50,
+                        height: kHeight * 6.8,
                         minWidth: double.infinity,
                         onPressed: () {
                           controller.onClickCreateAccount();
@@ -317,6 +305,8 @@ class Loading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var kHeight = MediaQuery.of(context).size.height / 100;
+    var kWidth = MediaQuery.of(context).size.width / 100;
     return Container(
       height: double.infinity,
       width: double.infinity,
@@ -326,16 +316,15 @@ class Loading extends StatelessWidget {
         elevation: 3,
         borderRadius: BorderRadius.circular(20),
         child: Container(
-          height: 65,
-          width: 70,
+          height: kHeight * 8.6,
+          width: kWidth * 19.5,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
           ),
           alignment: Alignment.center,
-          child: const SizedBox(
-              height: 30,
-              width: 30,
+          child: SizedBox(
+              width: kWidth * 8,
               child: FittedBox(
                   child: CupertinoActivityIndicator(
                 color: Colors.black,

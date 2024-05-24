@@ -1,149 +1,234 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:travel_app/app/widgets/KText.dart';
-import '../../../const/const.dart';
-import '../controllers/home_page_controller.dart';
+import 'package:travel_app/app/const/const.dart';
+import '../../../widgets/KText.dart';
+import '../controllers/profile_page_controller.dart';
 
-class HomePageView extends GetView<HomePageController> {
-  const HomePageView({Key? key}) : super(key: key);
+class ProfilePageView extends GetView<ProfilePageController> {
+  const ProfilePageView({super.key});
   @override
   Widget build(BuildContext context) {
-    var AppHeight = (MediaQuery.of(context).size.height) / 100;
-    var AppWidth = (MediaQuery.of(context).size.width) / 100;
-    var controller = Get.put(HomePageController());
+    var user = FirebaseAuth.instance.currentUser;
+    var controller = Get.put(ProfilePageController());
     return Scaffold(
-        key: controller.globalKey,
-        drawer: SafeArea(child: KDrawer(controller, context)),
-        // backgroundColor: Color.fromARGB(255, 172, 171, 171),
-        body: Padding(
-          padding: const EdgeInsets.only(left: 15, right: 15, top: 40),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 10, right: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  // crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                          controller.globalKey.currentState?.openDrawer();
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 32,
-                        width: 32,
-                        decoration: BoxDecoration(
-                            image: const DecorationImage(
-                              image: AssetImage("assets/icons/menu.png"),
-                              fit: BoxFit.cover,
-                            ),
-                            // color: Colors.grey,
-                            borderRadius: BorderRadius.circular(50)),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.location_on_outlined,
-                            size: 17, color: Colors.grey.shade600),
-                        const SizedBox(width: 1),
-                        Ktext(
-                          text: "Mirpur 10",
-                          fontSize: 15,
-                          color: Colors.grey.shade600,
-                        ),
-                      ],
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      height: 32,
-                      width: 32,
-                      decoration: BoxDecoration(
-                          image: const DecorationImage(
-                            image: AssetImage("assets/icons/notification.png"),
-                            fit: BoxFit.cover,
-                          ),
-                          // color: Colors.grey,
-                          borderRadius: BorderRadius.circular(50)),
-                    ),
-                  ],
-                ),
-              ),
+      key: controller.globalKey,
+      endDrawer: SafeArea(child: KEndDrawer(controller, context)),
+      backgroundColor: Colors.grey.shade300,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
 
-              // Text(
-              //   "Find your next trip",
-              //   style: TextStyle(fontSize: 13),
-              // ),
-              // const Padding(
-              //   padding: EdgeInsets.only(top: 30, left: 10, right: 10),
-              //   child: Text(
-              //     "Explore New Destination",
-              //     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              //   ),
-              // ),
-              // const SizedBox(height: 10),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Material(
-              //       borderRadius: BorderRadius.circular(50),
-              //       elevation: 10,
-              //       child: Container(
-              //           height: 50,
-              //           width: AppWidth * 85,
-              //           decoration: BoxDecoration(
-              //               color: Colors.white,
-              //               // border: Border.all(color: Colors.grey),
-              //               borderRadius: BorderRadius.circular(50)),
-              //           child: Row(
-              //             children: [
-              //               const SizedBox(width: 10),
-              //               const Icon(
-              //                 Icons.search,
-              //                 color: Colors.grey,
-              //               ),
-              //               const SizedBox(width: 10),
-              //               const Expanded(
-              //                   child: TextField(
-              //                 decoration: InputDecoration(
-              //                     border: InputBorder.none,
-              //                     hintText: "Search...",
-              //                     hintStyle: TextStyle(color: Colors.grey)),
-              //               )),
-              //               Container(
-              //                 alignment: Alignment.center,
-              //                 height: 40,
-              //                 width: 40,
-              //                 decoration: BoxDecoration(
-              //                     color: Colors.grey,
-              //                     borderRadius: BorderRadius.circular(50)),
-              //                 child: const Icon(
-              //                   Icons.menu,
-              //                   size: 18,
-              //                 ),
-              //               ),
-              //               const SizedBox(width: 8),
-              //             ],
-              //           )),
-              //     ),
-              //   ],
-              // ),
-              // const Padding(
-              //   padding: EdgeInsets.only(top: 30, left: 0, right: 0),
-              //   child: Text(
-              //     "Catagories",
-              //     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              //   ),
-              // ),
-            ],
-          ),
-        ));
+        // leading: BackButton(
+        //   onPressed: () {
+        //     Navigator.pop(context);
+        //   },
+        //   color: Colorsys.grey,
+        // ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              controller.globalKey.currentState?.openEndDrawer();
+            },
+            icon: const Icon(Icons.settings, size: 25, color: Colors.black),
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(15),
+                      bottomRight: Radius.circular(15)),
+                  color: Colors.white),
+              child: Column(
+                children: <Widget>[
+                  const SizedBox(height: 5),
+                   Hero(
+                    transitionOnUserGestures: true,
+                    tag: "ajay",
+                    child: Container(
+                        padding: const EdgeInsets.all(2),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Kcolor.black,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.shade300,
+                                  blurRadius: 20,
+                                  offset: const Offset(0, 10))
+                            ]),
+                        child: 
+                        user!.photoURL != null ? 
+                         CircleAvatar(
+                          backgroundImage: NetworkImage(user!.photoURL ?? ""),
+                          maxRadius: 40,
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Container(
+                              padding: const EdgeInsets.all(2),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                              ),
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  height: 15,
+                                  width: 20,
+                                  decoration: BoxDecoration(
+                                    color: Kcolor.black,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: const Icon(
+                                    Icons.edit,
+                                    size: 12,
+                                    color: Colors.white,
+                                  )),
+                            ),
+                          ),
+                        ): CircularProgressIndicator()
+                        )  ,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Ktext(
+                    text: user.displayName ?? "Null Name",
+                    fontSize: 22,
+                    color: Kcolor.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Ktext(
+                    text: user.email,
+                    fontSize: 14,
+                    color: Colors.grey.shade500,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  makeActionButtons(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  ListTile(
+                    onTap: () {},
+                    title: Ktext(
+                        text: "Account Setting", color: Colors.grey.shade600),
+                    leading: Icon(
+                      Icons.person_pin_outlined,
+                      color: Colors.grey.shade600,
+                    ),
+                    trailing: const Icon(Icons.keyboard_arrow_right_outlined),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 35),
+                    child: Divider(),
+                  ),
+                  ListTile(
+                    onTap: () {},
+                    title: Ktext(
+                        text: "Change Password", color: Colors.grey.shade600),
+                    leading: Icon(
+                      Icons.lock_open_outlined,
+                      color: Colors.grey.shade600,
+                    ),
+                    trailing: const Icon(Icons.keyboard_arrow_right_outlined),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 35),
+                    child: Divider(),
+                  ),
+                  ListTile(
+                    onTap: () {},
+                    title: Ktext(text: "Language", color: Colors.grey.shade600),
+                    leading: Icon(
+                      Icons.language,
+                      color: Colors.grey.shade600,
+                    ),
+                    trailing: Icon(
+                      Icons.keyboard_arrow_right_outlined,
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 35),
+                    child: Divider(),
+                  ),
+                  ListTile(
+                    onTap: () {},
+                    title: Ktext(text: "Help", color: Colors.grey.shade600),
+                    leading: Icon(
+                      Icons.help_outline,
+                      color: Colors.grey.shade600,
+                    ),
+                    trailing: const Icon(Icons.keyboard_arrow_right_outlined),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget makeActionButtons() {
+    return Transform.translate(
+      offset: const Offset(0, 5),
+      child: Container(
+        height: 65,
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.symmetric(horizontal: 90),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50),
+            // color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.shade300,
+                  blurRadius: 20,
+                  offset: const Offset(0, 10))
+            ]),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  height: double.infinity,
+                  elevation: 0,
+                  onPressed: () {},
+                  color: Kcolor.black,
+                  child: Ktext(
+                    text: "Edit Profile",
+                    color: Colors.white,
+                  )),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
-Widget KDrawer(
-  HomePageController controller,
+Widget KEndDrawer(
+  ProfilePageController controller,
   BuildContext context,
 ) {
   return Drawer(
@@ -396,7 +481,7 @@ Widget KDrawer(
               color: Colors.grey.shade300,
             ),
             onTap: () {
-        
+              controller.logOutDialogBox(context);
             },
           ),
         ),
