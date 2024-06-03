@@ -14,7 +14,7 @@ class ProfilePageView extends GetView<ProfilePageController> {
     return Scaffold(
       key: controller.globalKey,
       endDrawer: SafeArea(child: KEndDrawer(controller, context)),
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -47,7 +47,7 @@ class ProfilePageView extends GetView<ProfilePageController> {
               child: Column(
                 children: <Widget>[
                   const SizedBox(height: 5),
-                   Hero(
+                  Hero(
                     transitionOnUserGestures: true,
                     tag: "ajay",
                     child: Container(
@@ -61,36 +61,72 @@ class ProfilePageView extends GetView<ProfilePageController> {
                                   blurRadius: 20,
                                   offset: const Offset(0, 10))
                             ]),
-                        child: 
-                        user!.photoURL != null ? 
-                         CircleAvatar(
+                        child: CircleAvatar(
                           backgroundImage: NetworkImage(user!.photoURL ?? ""),
-                          maxRadius: 40,
+                          maxRadius: 45,
                           child: Align(
                             alignment: Alignment.bottomRight,
-                            child: Container(
-                              padding: const EdgeInsets.all(2),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white,
-                              ),
+                            child: GestureDetector(
+                              onTap: () {},
                               child: Container(
-                                  alignment: Alignment.center,
-                                  height: 15,
-                                  width: 20,
-                                  decoration: BoxDecoration(
-                                    color: Kcolor.black,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: const Icon(
-                                    Icons.edit,
-                                    size: 12,
-                                    color: Colors.white,
-                                  )),
+                                padding: const EdgeInsets.all(2),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                                child: PopupMenuButton(
+                                  color: Colors.white,
+                                  child: Container(
+                                      alignment: Alignment.center,
+                                      height: 20,
+                                      width: 25,
+                                      decoration: BoxDecoration(
+                                        color: Kcolor.black,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: const Icon(
+                                        Icons.edit,
+                                        size: 13,
+                                        color: Colors.white,
+                                      )),
+                                  onSelected: (value) {
+                                    if (value == "Create MCQ") {
+                                      print("Create MCQ");
+                                    } else if (value == "Create Written") {
+                                      print("Create Written");
+                                    } else if (value == "Create Forum") {
+                                      print("Create Forum");
+                                    }
+                                  },
+                                  itemBuilder: (context) {
+                                    return [
+                                      const PopupMenuItem(
+                                        height: 30,
+                                        value: "Create MCQ",
+                                        child: Text(
+                                          "Edit Photo",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                      const PopupMenuItem(
+                                        height: 30,
+                                        value: "Create MCQ",
+                                        child: Text(
+                                          "Change Photo",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ];
+                                  },
+                                ),
+                              ),
                             ),
                           ),
-                        ): CircularProgressIndicator()
-                        )  ,
+                        )),
                   ),
                   const SizedBox(
                     height: 20,
@@ -457,32 +493,35 @@ Widget KEndDrawer(
             ),
           ),
         ),
+        // Padding(
+        //   padding: const EdgeInsets.only(left: 25, right: 25),
+        //   child: Divider(
+        //     thickness: 2,
+        //     color: Colors.grey.shade300,
+        //   ),
+        // ),
         Padding(
-          padding: const EdgeInsets.only(left: 25, right: 25),
-          child: Divider(
-            thickness: 2,
-            color: Colors.grey.shade300,
-          ),
-        ),
-        Card(
-          color: Colors.white,
-          child: ListTile(
-            title: Ktext(text: "Log Out", color: Colors.grey.shade600),
-            leading: CircleAvatar(
-              backgroundColor: Kcolor.black,
-              child: Icon(
-                Icons.logout,
-                size: 20,
-                color: Kcolor.white,
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Card(
+            color: Colors.white,
+            child: ListTile(
+              title: Ktext(text: "Log Out", color: Colors.grey.shade600),
+              leading: CircleAvatar(
+                backgroundColor: Kcolor.black,
+                child: Icon(
+                  Icons.logout,
+                  size: 20,
+                  color: Kcolor.white,
+                ),
               ),
+              trailing: Icon(
+                Icons.arrow_forward,
+                color: Colors.grey.shade300,
+              ),
+              onTap: () {
+                controller.logOutDialogBox(context);
+              },
             ),
-            trailing: Icon(
-              Icons.arrow_forward,
-              color: Colors.grey.shade300,
-            ),
-            onTap: () {
-              controller.logOutDialogBox(context);
-            },
           ),
         ),
       ],

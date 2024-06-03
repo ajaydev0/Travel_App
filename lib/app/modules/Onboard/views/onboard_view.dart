@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travel_app/app/const/const.dart';
+import 'package:travel_app/app/const/theme_Colors.dart';
 import '../../../widgets/KText.dart';
 import '../controllers/onboard_controller.dart';
 import '../model/onBoardModel.dart';
@@ -9,7 +10,7 @@ class OnboardView extends GetView<OnboardController> {
   const OnboardView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Get.put(OnboardController());
+    var controller = Get.put(OnboardController());
     var kHeight = MediaQuery.of(context).size.height / 100;
     var kWidth = MediaQuery.of(context).size.width / 100;
     return Obx(
@@ -28,15 +29,14 @@ class OnboardView extends GetView<OnboardController> {
                   Text(
                     "${controller.selectedIndex.value + 1}",
                     style: TextStyle(
-                        color: Kcolor.black,
+                        color: kc.primaryTextColor,
                         fontSize: kWidth * 7,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     '/${onBoardList.length}',
                     style: TextStyle(
-                        color: Colors.grey.shade500,
-                        fontSize: kWidth * 4.5),
+                        color: kc.secondaryTextColor, fontSize: kWidth * 4.5),
                   )
                 ],
               ),
@@ -119,7 +119,7 @@ class OnboardView extends GetView<OnboardController> {
                           : Colors.grey[300],
                       borderRadius: BorderRadius.circular(10)),
                 ),
-                   SizedBox(width: kWidth * 3),
+                SizedBox(width: kWidth * 3),
                 Container(
                   height: kHeight * 1.1,
                   width: kWidth * 4.3,
@@ -143,7 +143,7 @@ class OnboardView extends GetView<OnboardController> {
             ),
             SizedBox(height: kHeight * 7),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: kWidth * 2.6),
+              padding: EdgeInsets.symmetric(horizontal: kWidth * 2.6),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
